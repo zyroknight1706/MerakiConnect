@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import AccImage from './data/AccImage.jpg'
 
@@ -13,21 +14,33 @@ const Image = styled.img`
 `
 
 const Button = styled.button`
-    height: 50px;
+    padding: 20px 10px;
+    max-height: 10px;
+    border: 5px solid #262626;
+    align-items: center;
+    text-style: none;
+    background-color: #fff;
+    color: #262626;
+    cursor: pointer;
+    transition: .5s;
+    :hover {
+        background-color: #262626;
+        color: #fff;
+    }
 `
 
 const Profile = () => {
   return (
     <A onClick="">
-        <Image src={AccImage}></Image>
+        <Image src={AccImage} onClick=""></Image>
     </A>
   )
 }
 
 const SignIn = () => {
     return (
-        <Button onClick="">
-            Sign In
+        <Button>
+            <Link to="/Login" style={{textDecoration: "none", color: "#262626"}}>Sign In</Link>
         </Button>
     )
 }
