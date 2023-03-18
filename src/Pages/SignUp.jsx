@@ -4,14 +4,11 @@ import * as FaIcon from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const Container = styled.div`
+    margin: 40px;
     align-items: center;
     justify-content: center;
-    margin: 30px;
-    padding: 40px;
     display: flex;
     flex-direction: column;
-    background-color: #000;
-    color: #fff;
 `
 
 const Form = styled.div`
@@ -39,8 +36,7 @@ const Button = styled.button`
     border: 2px solid #262626;
     cursor: pointer;
     width: 100%;
-    transition: .5s;
-    box-shadow: none;
+    transition: 1s;
     :hover {
         background-color: #262626;
         color: #fff;
@@ -70,7 +66,7 @@ const Google = styled.button`
     border: 2px solid #262626;
     cursor: pointer;
     width: 100%;
-    transition: ease-in-out .5s;
+    transition: 1s;
     :hover {
         background-color: black;
         color: white;
@@ -96,24 +92,24 @@ transition: ease-in-out .5s;
 }
 `
 
-const Login = () => {
+const SignUp = () => {
   return (
     <Container>
         <Link to="/" style={{alignItems: "right"}}><FaIcon.FaRegWindowClose style={{fontSize:"25px"}}/></Link>
       <Form>
-      <h1>Login to use all the features:</h1>
-      <br />
-      <br />
-      <Input placeholder="email" />
-      <Input placeholder="Password" type="password"/>
-      <Button><Link to="/" style={{color:"#000"}}>Sign In</Link></Button><br /><br />
-      <Small>Don't have an account? <Link to="/SignUp">Sign Up.</Link></Small>
+      <h1>Sign Up to get funded:</h1>
+      <Input placeholder = "Name" />
+      <Input placeholder="email address" />
+      <Input placeholder="Enter Password" type="password" />
+      <Input placeholder="Confirm Password" type="password" />
+      <Button>Sign Up</Button>
+      <Small>Already have an account? <Link to="/Login">Log In.</Link></Small>
       <P>------------- OR ------------</P>
-      <Google><FaIcon.FaGoogle />Sign In with Google</Google>
-      <LinkedIn><FaIcon.FaLinkedin />Sign In with LinkedIn</LinkedIn>
+      <Google><FaIcon.FaGoogle style={{fontSize: "15px", padding: "20px"}}/>Sign Up with Google</Google>
+      <LinkedIn><FaIcon.FaLinkedin />      Sign Up with LinkedIn</LinkedIn>
       </Form>
     </Container>
   )
 }
 
-export default Login
+export default SignUp

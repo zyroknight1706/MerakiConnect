@@ -14,8 +14,8 @@ const Image = styled.img`
 `
 
 const Button = styled.button`
-    padding: 20px 10px;
-    max-height: 10px;
+    padding: 2rem 2rem;
+    max-height: 25px;
     border: 5px solid #262626;
     align-items: center;
     text-style: none;

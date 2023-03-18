@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components';
 import * as FaIcons from 'react-icons/fa'
 import { Profile, SignIn } from './NavbarComponents'
 import { Link } from 'react-router-dom'
@@ -8,7 +8,8 @@ import logo from './data/logo.png'
 const Container = styled.div`
   margin: 0;
   padding: 10px;
-  max-height: 50px;
+  height: 80px;
+  width: 97vw;
   background-color: #262626;
   color: #fff;
   position: sticky;
@@ -32,20 +33,19 @@ const Menu = styled.div`
   align-items: center;
   justify-content: space-between;
   display: flex;
-  transition: 2s;
+  font-size: 30px;
+  transition: .5s;
   :hover {
-    background-color: #fff;
+    font-size: 35px;
   }
 `
 
 const Logo = styled.div`
   flex: 1;
-  align-items: center;
-  padding: 0px 430px;
+  padding: 0px 435px;
 `
 
 const Image = styled.img`
-  padding: 0 40px;
 `
 
 const SideBar = styled.div`
@@ -65,10 +65,18 @@ const Li = styled.li`
   justify-content: space-between;
   color: white;
   list-style: none;
+  transition: ease-in .5s;
   text-decoration: none;
+  :hover{
+    background-color: #fff;
+    color: #262626;
+    
+  }
 `
 
-const Account = styled.div``
+const Account = styled.div`
+  display: inline block;
+`
 
 const Navbar = ({LoggedIn}) => {
 
@@ -79,7 +87,8 @@ const Navbar = ({LoggedIn}) => {
   }
 
   const sbstyle = {
-    transform: Sidebar ? "translateX(0%)" : "translateX(-100%)"
+    transform: Sidebar ? "translateX(0%)" : "translateX(-100%)",
+    fontSize: "20px"
   }
 
   return (
@@ -88,7 +97,7 @@ const Navbar = ({LoggedIn}) => {
         <Menu onClick={ToggleSidebar}>
           <FaIcons.FaBars />
         </Menu>
-        <Logo><Image src={logo} height="40" width="130" /></Logo>
+        <Logo><Image src={logo} height="45" width="170" /></Logo>
         <Account>{LoggedIn ? <Profile /> : <SignIn />}</Account>
       </Wrapper>
       <SideBar style={sbstyle}>

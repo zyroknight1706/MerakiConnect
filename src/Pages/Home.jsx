@@ -1,15 +1,21 @@
 import React from 'react'
-import Navbar from '../Components/Navbar.jsx'
-import Posts from '../Components/Posts.jsx'
+import Sidebar from '../Components/Sidebar'
+import Posts from '../Components/Posts'
+import Searchbar from '../Components/Searchbar'
 import styled from 'styled-components'
 
-const Container = styled.div``
+const Container = styled.div`
+  display: flex;
+  background-color: #000;
+  color: #ffffff;
+`
 
-const Home = () => {
+const Home = ({LoggedIn}) => {
   return (
     <Container>
-      <Navbar LoggedIn={false} class="navbar"/>
+      <Sidebar LoggedIn={LoggedIn}/>
       <Posts />
+      <Searchbar />
     </Container>
   )
 }
